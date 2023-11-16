@@ -20,12 +20,9 @@ async function getData() {
     let cards = result.results;
 
     for(let card of cards){
-      console.log(card);
       createCardEl(card);
     }
     
-    
-
   } catch (error) {
     console.error(error);
   }
@@ -39,16 +36,22 @@ function createCardEl(cardMovie) {
   let cardEl = document.createElement("main");
   let titleEl = document.createElement("p");
   let posterEl = document.createElement("img");
+  let releaseEl = document.createElement('p');
+  let voteEl = document.createElement('p');
   let overviewEl = document.createElement("footer");
   
 
   cardsEl.appendChild(cardEl);
   cardEl.appendChild(titleEl);
   cardEl.appendChild(posterEl);
+  cardEl.appendChild(releaseEl);
+  cardEl.appendChild(voteEl);
   cardEl.appendChild(overviewEl);
 
-  titleEl.textContent = cardMovie.original_title;
+  titleEl.textContent = cardMovie.title;
   posterEl.src = `https://image.tmdb.org/t/p/w200/${cardMovie.poster_path}`;
+  releaseEl.textContent = cardMovie.release_date;
+  voteEl.textContent = cardMovie.vote_average;
   overviewEl.textContent = cardMovie.overview;
   
   return cardEl;
