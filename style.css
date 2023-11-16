@@ -79,7 +79,6 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-
   .cardMovie{
     width: 20rem;
     height: 30rem;
@@ -88,9 +87,10 @@ body{
   .title{
     font-size: 1rem;
   }
-  
+
   .poster{
     width: 15rem;
+    opacity: 1;
   }
   .overview{
     opacity: 0;

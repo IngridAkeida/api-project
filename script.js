@@ -67,10 +67,4 @@ function createCardEl(cardMovie) {
 }
 getData();
 
-/*let btnEl = document.querySelector("#btn");
-btnEl.addEventListener("click", function () {
-  getData();
-});*/
-
-
 
