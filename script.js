@@ -16,56 +16,43 @@ async function getData() {
     const result = await response.json();
 
     console.log(result.results[0]);
-
-    let cardMovie = result.results[0];
-
-    let cardsEl = document.getElementById("card");
-
-    let cardEl = document.createElement("main");
-    let titleEl = document.createElement("p");
-    let posterEl = document.createElement("img");
-    let overviewEl = document.createElement("footer");
     
+    let cards = result.results;
 
-    cardsEl.appendChild(cardEl);
-    cardEl.appendChild(titleEl);
-    cardEl.appendChild(posterEl);
-    cardEl.appendChild(overviewEl);
-
-    titleEl.textContent = cardMovie.original_title;
-    posterEl.src = `https://image.tmdb.org/t/p/w200/${cardMovie.poster_path}`;
-    overviewEl.textContent = cardMovie.overview;
+    for(let card of cards){
+      console.log(card);
+      createCardEl(card);
+    }
     
     
-    /*cardsEl.innerHTML = "";*/
-
-    
-      
 
   } catch (error) {
     console.error(error);
   }
 }
 
-/*function createCardEl(cardMovie) {
-  let cardEl = document.createElement("main");
+function createCardEl(cardMovie) {
 
+  
+  let cardsEl = document.getElementById("card");
+
+  let cardEl = document.createElement("main");
   let titleEl = document.createElement("p");
   let posterEl = document.createElement("img");
   let overviewEl = document.createElement("footer");
-
-  titleEl.textContent = cardMovie.original_title;
-  posterEl.textContent = cardMovie.poster_path;
-  overviewEl.textContent = cardMovie.overview;
-
-  cardEl.append(titleEl);
-  cardEl.append(posterEl);
-  cardEl.append(overviewEl);
   
 
+  cardsEl.appendChild(cardEl);
+  cardEl.appendChild(titleEl);
+  cardEl.appendChild(posterEl);
+  cardEl.appendChild(overviewEl);
+
+  titleEl.textContent = cardMovie.original_title;
+  posterEl.src = `https://image.tmdb.org/t/p/w200/${cardMovie.poster_path}`;
+  overviewEl.textContent = cardMovie.overview;
+  
   return cardEl;
 }
-*/
 getData();
 
 /*let btnEl = document.querySelector("#btn");
