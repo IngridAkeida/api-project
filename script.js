@@ -57,19 +57,40 @@ function createCardEl(cardMovie) {
   voteEl.classList.add("vote");
   overviewEl.classList.add("overview");
 
+  //styles
+  //body
+
+  document.body.style.margin = "0";
+  document.body.style.padding = "0";
+
+  //card
+  
+  cardsEl.style.backgroundColor = "red";
+  cardsEl.style.display = "flex";
+  cardsEl.style.flexDirection = "column";
+  cardsEl.style.alignItems = "center";
+  cardsEl.style.justifyContent = "center";
+  cardsEl.style.textAlign = "center";
+  cardsEl.style.width = "100vw";
+
+  //cards
+
+  cardEl.style.width = "22rem";
+  cardEl.style.height = "100vh";
+  cardEl.style.backgroundColor = "white";
+
+  //title
+  //
+
+  
+
   titleEl.textContent = cardMovie.title;
   posterEl.src = `https://image.tmdb.org/t/p/w200/${cardMovie.poster_path}`;
-  releaseEl.textContent = cardMovie.release_date;
-  voteEl.textContent = cardMovie.vote_average;
+  releaseEl.textContent = `Release date: ${cardMovie.release_date}`;
+  voteEl.textContent = `Vote: ${cardMovie.vote_average}`;
   overviewEl.textContent = cardMovie.overview;
   
   return cardEl;
-}
-
-function styles() {
-
-
-  
 }
 getData();
 
