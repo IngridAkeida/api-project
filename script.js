@@ -15,7 +15,7 @@ async function getData() {
     const response = await fetch(url, options);
     const result = await response.json();
 
-    console.log(result.results[0]);
+    /*console.log(result.results[0]);*/
     
     let cards = result.results;
 
