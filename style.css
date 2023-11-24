@@ -105,10 +105,19 @@ body{
   .poster{
     width: 15rem;
     opacity: 1;
+    position: relative;
   }
+
   .overview{
     opacity: 0;
-    margin-top: -20rem;
+    margin-top: -26.1rem;
+    margin-left: 1.5rem;
+    padding-top: 1rem;
+    position: absolute;
+    background: linear-gradient(0deg, #00000000 0%, rgba(253,187,45,1) 100%);
+    border-radius: 0.5rem;
+    width: 16rem;
+    height: 24rem;
   }
   .overview:hover{
     opacity: 1;
