@@ -13,7 +13,7 @@
 body{
   font-family: 'Times New Roman', Times, serif;
   color: var(--color-font);
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .wrap{
@@ -24,7 +24,13 @@ body{
   justify-content: center;
   text-align: center;
   width: 100vw;
-  
+  margin-top: -1rem;
+}
+
+.mainTitle{
+  margin-top: 1rem;
+  padding: 1rem 0;
+  color: var(--bg-card);
 }
 
 .container{
@@ -36,26 +42,23 @@ body{
   gap: 1rem;
 }
 
-.mainTitle{
-  margin-top: 1rem;
-  color: var(--bg-card);
-}
-
 .cardMovie{
-  width: 21rem;
+  width: 18rem;
   height: auto;
   background-color: var(--bg-card);
   border-radius: 0.5rem;
 }
 
 .title{
-  width: 19rem;
+  width: 16rem;
   margin: auto;
   padding: 1rem 0;
+  font-size: 1.5rem;
 }
 
 .poster{
   display: block;
+  width: 16rem;
   border-radius: 0.5rem;
   margin: auto;
 }
@@ -71,19 +74,28 @@ body{
 .overview{
   padding: 0 2rem;
   margin-bottom: 1rem;
+  width: auto;
 }
 
-@media (min-width: 38rem){
+@media (min-width: 26rem){
+  .cardMovie{width: 20rem;}
+  .title{width: 18rem;}
+  .poster{width: 18rem;}
+}
+
+@media (min-width: 48rem){
   .mainTitle{
     margin-bottom: 1rem;
   }
   .container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem;
   }
   .cardMovie{
-    width: 20rem;
     height: 30rem;
+    margin-bottom: 2rem;
   }
 
   .title{
@@ -104,9 +116,26 @@ body{
     font-weight: bolder;
   }
 }
-@media (min-width: 68rem) {
+
+@media (min-width: 64rem){
   .container{
-    max-width: 1048px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .cardMovie{width: 19rem;}
+  .title{width: 16rem;}
+  .poster{width: 16rem;}
+}
+@media (min-width: 90rem) {
+  .wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+  }
+  .container{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 1440px;
   }
 }
 
